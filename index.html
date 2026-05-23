@@ -1,345 +1,94 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Rifa Beneficente - Fabio Soares Sousa</title>
-
-<style>
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-        font-family:Arial, Helvetica, sans-serif;
-    }
-
-    body{
-        background:#f4f6fb;
-        color:#111;
-    }
-
-    .container{
-        max-width:1200px;
-        margin:auto;
-        padding:20px;
-    }
-
-    .banner{
-        background:linear-gradient(135deg,#002e7a,#005eff);
-        color:white;
-        border-radius:20px;
-        padding:30px;
-        display:flex;
-        flex-wrap:wrap;
-        gap:20px;
-        align-items:center;
-        justify-content:space-between;
-        box-shadow:0 10px 30px rgba(0,0,0,0.15);
-    }
-
-    .banner-left{
-        flex:1;
-        min-width:280px;
-    }
-
-    .banner-left h1{
-        font-size:55px;
-        line-height:55px;
-    }
-
-    .banner-left h2{
-        font-size:22px;
-        margin-top:10px;
-        color:#ffe600;
-    }
-
-    .banner-left p{
-        margin-top:15px;
-        font-size:20px;
-        line-height:32px;
-    }
-
-    .premio{
-        background:#ff0000;
-        padding:25px;
-        border-radius:20px;
-        text-align:center;
-        min-width:280px;
-    }
-
-    .premio h3{
-        font-size:30px;
-    }
-
-    .premio .valor{
-        font-size:70px;
-        font-weight:bold;
-        color:#ffe600;
-        margin:10px 0;
-    }
-
-    .valor-ponto{
-        margin-top:20px;
-        background:#fff;
-        padding:20px;
-        border-radius:15px;
-        text-align:center;
-        color:#002e7a;
-        font-size:40px;
-        font-weight:bold;
-    }
-
-    .pix-box{
-        margin-top:30px;
-        background:white;
-        padding:25px;
-        border-radius:20px;
-        box-shadow:0 5px 20px rgba(0,0,0,0.08);
-    }
-
-    .pix-box h2{
-        color:#002e7a;
-        margin-bottom:15px;
-    }
-
-    .pix{
-        background:#f4f6fb;
-        padding:15px;
-        border-radius:10px;
-        margin-top:10px;
-        font-size:18px;
-    }
-
-    .qrcode{
-        margin-top:20px;
-        text-align:center;
-    }
-
-    .qrcode img{
-        width:250px;
-        max-width:100%;
-        border-radius:15px;
-        border:4px solid #002e7a;
-    }
-
-    .grid-section{
-        margin-top:40px;
-    }
-
-    .grid-section h2{
-        text-align:center;
-        color:#002e7a;
-        margin-bottom:20px;
-        font-size:35px;
-    }
-
-    .grid{
-        display:grid;
-        grid-template-columns:repeat(10,1fr);
-        gap:10px;
-    }
-
-    .numero{
-        background:white;
-        padding:15px 0;
-        text-align:center;
-        border-radius:10px;
-        font-weight:bold;
-        font-size:20px;
-        border:2px solid #002e7a;
-        cursor:pointer;
-        transition:0.2s;
-    }
-
-    .numero:hover{
-        background:#002e7a;
-        color:white;
-        transform:scale(1.05);
-    }
-
-    .doacao{
-        margin-top:40px;
-        background:#ffefef;
-        border-left:8px solid red;
-        padding:25px;
-        border-radius:15px;
-    }
-
-    .doacao h2{
-        color:red;
-        margin-bottom:10px;
-    }
-
-    .obs{
-        margin-top:30px;
-        background:#002e7a;
-        color:white;
-        padding:20px;
-        border-radius:15px;
-        text-align:center;
-        font-size:22px;
-    }
-
-    footer{
-        margin-top:40px;
-        text-align:center;
-        color:#666;
-        padding-bottom:40px;
-    }
-
-    @media(max-width:768px){
-
-        .banner-left h1{
-            font-size:40px;
-            line-height:40px;
-        }
-
-        .premio .valor{
-            font-size:55px;
-        }
-
-        .grid{
-            grid-template-columns:repeat(5,1fr);
-        }
-
-        .numero{
-            font-size:16px;
-        }
-    }
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-    <div class="banner">
-
-        <div class="banner-left">
-            <h1>RIFA BENEFICENTE</h1>
-
-            <h2>EM PROL DE FABIO SOARES SOUSA</h2>
-
-            <p>
-                Para o tratamento renal crônico, e cirurgia
-                para que ele possa permanecer na fila de transplante.
-            </p>
-
-            <div class="valor-ponto">
-                VALOR DO PONTO<br>
-                R$ 10,00
-            </div>
-        </div>
-
-        <div class="premio">
-            <h3>PRÊMIO DA RIFA</h3>
-
-            <div class="valor">
-                R$150
-            </div>
-
-            <h2>NO PIX</h2>
-        </div>
-
-    </div>
-
-    <div class="pix-box">
-
-        <h2>PAGAMENTO VIA PIX</h2>
-
-        <div class="pix">
-            <strong>Nome:</strong> Julia Lima de Sousa
-        </div>
-
-        <div class="pix">
-            <strong>Chave PIX:</strong><br>
-            juliadona36@gmail.com
-        </div>
-
-        <div class="qrcode">
-            <!-- TROQUE A IMAGEM ABAIXO PELO QR CODE -->
-            <img src="qrcode.jpg" alt="QR Code PIX">
-        </div>
-
-    </div>
-
-    <div class="grid-section">
-
-        <h2>ESCOLHA SEU NÚMERO</h2>
-
-        <div class="grid" id="grid"></div>
-
-    </div>
-
-    <div class="doacao">
-
-        <h2>NÃO PODE COMPRAR?</h2>
-
-        <p>
-            Faça uma doação voluntária.
-            Qualquer valor faz a diferença e ajuda no tratamento.
-        </p>
-
-    </div>
-
-    <div class="obs">
-        O sorteio será realizado no dia <strong>21/06/2026</strong>
-    </div>
-
-    <footer>
-        Sua ajuda faz a diferença ❤️
-    </footer>
-
-</div>
 <script>
 
 const grid = document.getElementById("grid");
 
+grid.innerHTML="";
+
 let numerosReservados =
-JSON.parse(localStorage.getItem("rifa_fabio")) || [];
+JSON.parse(
+localStorage.getItem(
+"rifa_fabio"
+)
+) || [];
 
-for(let i = 1; i <= 100; i++){
+for(let i=1;i<=100;i++){
 
-let numero = document.createElement("div");
+const numero =
+document.createElement("div");
 
-numero.classList.add("numero");
+numero.className="numero";
 
-let codigo =
-i.toString().padStart(2,"0");
+const codigo =
+String(i)
+.padStart(2,"0");
 
-numero.innerHTML = codigo;
+numero.textContent =
+codigo;
 
-if(numerosReservados.includes(codigo)){
+function pintar(){
 
-numero.style.background="#e53935";
+if(
+numerosReservados.includes(codigo)
+){
 
-numero.style.color="#fff";
+numero.style.background=
+"#e53935";
 
-numero.style.cursor="not-allowed";
+numero.style.color=
+"#fff";
+
+numero.style.cursor=
+"not-allowed";
+
+}else{
+
+numero.style.background=
+"";
+
+numero.style.color=
+"";
 
 }
 
-numero.onclick = () => {
+}
 
-if(numerosReservados.includes(codigo)){
+pintar();
 
-alert("Este número já foi escolhido.");
+numero.addEventListener(
+"click",
+()=>{
+
+if(
+numerosReservados.includes(
+codigo
+)
+){
+
+alert(
+"Este número já foi escolhido."
+);
 
 return;
 
 }
 
 const nome =
-prompt("Digite seu nome:");
+prompt(
+"Digite seu nome:"
+);
 
 if(!nome) return;
 
-const whatsapp =
-prompt("Digite seu WhatsApp:");
+const celular =
+prompt(
+"Digite seu WhatsApp:"
+);
 
-if(!whatsapp) return;
+if(!celular) return;
 
-numerosReservados.push(codigo);
+numerosReservados.push(
+codigo
+);
 
 localStorage.setItem(
 "rifa_fabio",
@@ -348,25 +97,29 @@ numerosReservados
 )
 );
 
-numero.style.background="#e53935";
+pintar();
 
-numero.style.color="#fff";
+const texto =
+encodeURIComponent(
+`Olá! Quero reservar o número ${codigo} da rifa beneficente.
 
-const mensagem =
-`Olá! Quero reservar o número ${codigo} da rifa beneficente.%0A%0ANome: ${nome}%0AWhatsApp: ${whatsapp}`;
+Nome: ${nome}
+
+WhatsApp: ${celular}`
+);
 
 window.open(
-`https://wa.me/559981771386?text=${mensagem}`,
+`https://wa.me/559981771386?text=${texto}`,
 "_blank"
 );
 
-};
+}
+);
 
-grid.appendChild(numero);
+grid.appendChild(
+numero
+);
 
 }
 
 </script>
-
-</body>
-</html>
