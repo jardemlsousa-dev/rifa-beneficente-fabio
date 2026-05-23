@@ -291,42 +291,79 @@
     </footer>
 
 </div>
-
 <script>
 
 const grid = document.getElementById("grid");
 
+let numerosReservados =
+JSON.parse(localStorage.getItem("rifa_fabio")) || [];
+
 for(let i = 1; i <= 100; i++){
 
-    let numero = document.createElement("div");
+let numero = document.createElement("div");
 
-    numero.classList.add("numero");
+numero.classList.add("numero");
 
-    numero.innerHTML = i.toString().padStart(2, '0');
+let codigo =
+i.toString().padStart(2,"0");
 
-    numero.onclick = () => {
+numero.innerHTML = codigo;
 
-        const nome = prompt("Digite seu nome:");
+if(numerosReservados.includes(codigo)){
 
-        const whatsapp = prompt("Digite seu WhatsApp:");
+numero.style.background="#e53935";
 
-        if(nome && whatsapp){
+numero.style.color="#fff";
 
-            const mensagem =
-            `Olá! Quero reservar o número ${numero.innerHTML} da rifa beneficente.%0A%0ANome: ${nome}%0AWhatsApp: ${whatsapp}`;
+numero.style.cursor="not-allowed";
 
-            window.open(
-                `https://wa.me/559981771386?text=${mensagem}`,
-                '_blank'
-            );
+}
 
-            numero.style.background = "#ffc107";
-            numero.style.color = "#000";
-        }
+numero.onclick = () => {
 
-    }
+if(numerosReservados.includes(codigo)){
 
-    grid.appendChild(numero);
+alert("Este número já foi escolhido.");
+
+return;
+
+}
+
+const nome =
+prompt("Digite seu nome:");
+
+if(!nome) return;
+
+const whatsapp =
+prompt("Digite seu WhatsApp:");
+
+if(!whatsapp) return;
+
+numerosReservados.push(codigo);
+
+localStorage.setItem(
+"rifa_fabio",
+JSON.stringify(
+numerosReservados
+)
+);
+
+numero.style.background="#e53935";
+
+numero.style.color="#fff";
+
+const mensagem =
+`Olá! Quero reservar o número ${codigo} da rifa beneficente.%0A%0ANome: ${nome}%0AWhatsApp: ${whatsapp}`;
+
+window.open(
+`https://wa.me/559981771386?text=${mensagem}`,
+"_blank"
+);
+
+};
+
+grid.appendChild(numero);
+
 }
 
 </script>
